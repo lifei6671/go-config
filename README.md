@@ -41,7 +41,7 @@ Go-Config 是一个面向生产环境的**多源配置加载框架**，支持文
 
 ${env.HOST}
 ${env.PORT|8080}
-${gdp.HOST}
+${gin.HOST}
 Listen="0.0.0.0:${env.LISTEN|8080}"
 
 ````
@@ -144,7 +144,7 @@ cfg.Unmarshal(&ac)
 server:
   host: ${env.HOST|127.0.0.1}
   port: ${env.PORT|8080}
-  address: "0.0.0.0:${gdp.PORT|9000}"
+  address: "0.0.0.0:${gin.PORT|9000}"
 ```
 
 所有占位符在 Load 阶段自动替换。
