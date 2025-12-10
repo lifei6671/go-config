@@ -1,0 +1,22 @@
+server:
+  host: "${env.HOST|0.0.0.0}"         # 自定义占位符示例
+  port: 8080                          # 整数
+  read_timeout: "5s"                  # 持续时间（作为字符串）
+  write_timeout: "5s"
+  max_header_bytes: 1048576
+
+features:
+  enabled:
+    - auth
+    - metrics
+    - tracing
+  experimental:
+    - name: "new-ui"
+      rollout: 0.1                    # 浮点数
+      conditions:
+        regions: ["us-east-1", "ap-southeast-1"]
+        min_app_version: "1.0.0"
+
+inline_examples:
+  inline_list: [1, 2, 3]
+  inline_map: { a: 1, b: 2 }

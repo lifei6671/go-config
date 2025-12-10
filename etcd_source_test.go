@@ -35,7 +35,7 @@ func TestEtcdSource_Load(t *testing.T) {
 		assert.Equal(t, m.Format, "yaml")
 	})
 
-	_, err = client.Put(context.Background(), "/app/db.json", `{"host"": "127.0.0.1"}`)
+	_, err = client.Put(context.Background(), "/app/db.json", `{"host": "127.0.0.1"}`)
 	require.NoError(t, err)
 
 	t.Run("EtcdSource_Load_AutoFormat", func(t *testing.T) {
