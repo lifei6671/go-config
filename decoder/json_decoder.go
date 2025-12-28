@@ -13,6 +13,10 @@ import (
 //   - 如果需要严格数字类型，可以在 Merge 阶段或 Unmarshal 阶段转换。
 type JSONDecoder struct{}
 
+func NewJSONDecoder() JSONDecoder {
+	return JSONDecoder{}
+}
+
 // Format 实现 Decoder 接口。
 func (JSONDecoder) Format() string {
 	return "json"

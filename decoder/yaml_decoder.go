@@ -11,6 +11,10 @@ import (
 // 必须转换为 map[string]any，否则会导致 DefaultConfig.Merge 失败。
 type YAMLDecoder struct{}
 
+func NewYAMLDecoder() YAMLDecoder {
+	return YAMLDecoder{}
+}
+
 // Format 实现 Decoder 接口。
 func (YAMLDecoder) Format() string {
 	return "yaml"

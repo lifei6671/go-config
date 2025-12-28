@@ -10,6 +10,10 @@ import (
 // go-toml v2 解析结果格式天然为 map[string]any，不需要像 YAML 那样手工转换。
 type TOMLDecoder struct{}
 
+func NewTOMLDecoder() TOMLDecoder {
+	return TOMLDecoder{}
+}
+
 // Format 实现 Decoder 接口。
 func (TOMLDecoder) Format() string {
 	return "toml"

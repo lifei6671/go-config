@@ -23,6 +23,10 @@ import (
 //   - 自动 trim key/value
 type PropertiesDecoder struct{}
 
+func NewPropertiesDecoder() PropertiesDecoder {
+	return PropertiesDecoder{}
+}
+
 // Format 实现 Decoder 接口
 func (PropertiesDecoder) Format() string {
 	return "properties"
